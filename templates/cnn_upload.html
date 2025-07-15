@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Start Diagnosis{% endblock %}
+{% block content %}
+<div id="main-container">
+  <h1 id="main-title">🌿 Hybrid DSS: Indigenous Tuber Crops</h1>
+  <p id="subtitle">Upload your leaf image to get started.</p>
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" required><br><br>
+    <button id="run-diagnosis-btn" type="submit">Run Diagnosis</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Step 4: Tuber Texture{% endblock %}
+
+{% block content %}
+  <!-- <h2>Step 3a: Tuber Surface Texture</h2> -->
+   <h2>Step 4: Tuber Surface Texture</h2>
+  <p>Please describe the surface texture of the tuber.</p>
+  <form method="post">
+    <label for="tuber_texture">Tuber Surface Texture:</label>
+    <select name="tuber_texture" id="tuber_texture" required>
+      <option value="smooth">Smooth</option>
+      <option value="cracked">Dry, Brittle or Cracked</option>
+      <option value="lesions">Shows lesions or sores</option>
+    </select>
+    
+    <button type="submit">Next</button>
+  </form>
+{% endblock %}

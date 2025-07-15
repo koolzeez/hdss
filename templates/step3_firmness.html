@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Step 5: Tuber Firmness{% endblock %}
+
+{% block content %}
+  <!-- <h2>Step 3b: Tuber Firmness</h2> -->
+   <h2>Step 5: Tuber Firmness</h2>
+  <p>How does the tuber feel when pressed?</p>
+  <form method="post">
+    <label for="tuber_firmness">Tuber Firmness:</label>
+    <select name="tuber_firmness" id="tuber_firmness" required>
+      <option value="normal_firm">Normal and Firm</option>
+      <option value="soft_mushy">Soft and Mushy</option>
+    </select>
+    
+    <button type="submit">Next</button>
+  </form>
+{% endblock %}

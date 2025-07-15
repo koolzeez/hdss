@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}CNN Result{% endblock %}
+{% block content %}
+  <h2>{{ info.title }}</h2>
+  <p><strong>Description:</strong> {{ info.description }}</p>
+  <p><strong>Symptoms:</strong> {{ info.symptoms }}</p>
+  <p><strong>Recommended Action:</strong> {{ info.management }}</p>
+  <form method="POST" action="{{ url_for('step1_leaf') }}">
+    <button class="btn">Continue with Rule-Based Diagnosis</button>
+  </form>
+{% endblock %}

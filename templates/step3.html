@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Step 3: Tuber Symptoms{% endblock %}
+
+{% block content %}
+  <h2>Step 3: Tuber Symptoms</h2>
+  <p>Finally, inspect the harvested tubers for any abnormalities in texture and smell.</p>
+  <form method="post">
+    <label for="tuber_texture">Tuber Texture:</label>
+    <select name="tuber_texture" id="tuber_texture" required>
+      <option value="normal_firm">Normal and Firm</option>
+      <option value="soft_mushy">Soft and Mushy</option>
+      <option value="dry_brittle">Dry, Brittle or Cracked</option>
+    </select>
+    
+    <label for="tuber_smell">Tuber Smell:</label>
+    <select name="tuber_smell" id="tuber_smell" required>
+      <option value="mild">Mild/Normal Earthy Smell</option>
+      <option value="foul">Foul or Fishy Smell</option>
+    </select>
+
+    <!-- <div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0K8Pj_-_sKjXb6u5Q_ZJ4Z6YwXwXwXwXwXw&s" alt="Tuber Symptom Example" class="symptom-image">
+      <p><small>Example of tuber rot.</small></p>
+    </div> -->
+
+    <button type="submit">Get Diagnosis</button>
+  </form>
+{% endblock %}

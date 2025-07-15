@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Step 3: Stem Symptoms{% endblock %}
+
+{% block content %}
+  <!-- <h2>Step 2: Stem Symptoms</h2> -->
+    <h2>Step 3: Stem Symptoms</h2>
+  <p>Now, let's examine the plant stems. If these symptoms are not present, you can leave them as "No".</p>
+  
+  <form method="post">
+    
+    <div id="stem_lesion_field" class="optional-field">
+      <label for="stem_lesion">Stem Lesion (Sores/Spots):</label>
+      <select name="stem_lesion" id="stem_lesion">
+        <option value="no">No Lesions</option>
+        <option value="wet">Wet or Water-Soaked Lesions</option>
+        <option value="dry">Dry or Sunken Lesions</option>
+      </select>
+      <!-- <img src="https://www.haifa-group.com/sites/default/files/styles/1032_580/public/2021-02/Blackleg-potato-2.jpg?itok=z2hR6Z_v" alt="Stem Lesion Example" class="symptom-image">
+      <p><small>Example of stem lesions.</small></p> -->
+    </div>
+
+    <div id="stem_sticky_field" class="optional-field">
+      <label for="stem_sticky">Is there a sticky fluid on the stem?</label>
+      <select name="stem_sticky" id="stem_sticky">
+        <option value="no">No</option>
+        <option value="yes">Yes, a sticky ooze is present</option>
+      </select>
+    </div>
+    
+    <button type="submit">Next</button>
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cnnResult = '{{ cnn_result }}';
+        const lesionField = document.getElementById('stem_lesion_field');
+        const stickyField = document.getElementById('stem_sticky_field');
+
+        lesionField.style.display = 'block';
+
+        if (cnnResult === 'Cassava Bacterial Blight') {
+            stickyField.style.display = 'block';
+        } else {
+            stickyField.style.display = 'none';
+        }
+    });
+  </script>
+{% endblock %}

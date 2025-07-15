@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Step 6: Tuber Smell{% endblock %}
+
+{% block content %}
+  <!-- <h2>Step 6: Tuber Smell</h2> -->
+  <h2>Step 6: Tuber Smell</h2>
+  <p>Finally, describe the smell of the tuber, especially near any affected areas.</p>
+  <form method="post">
+    <label for="tuber_smell">Tuber Smell:</label>
+    <select name="tuber_smell" id="tuber_smell" required>
+      <option value="mild">Mild/Normal Earthy Smell</option>
+      <option value="foul">Foul or Fishy Smell</option>
+    </select>
+
+   <button type="submit">Get Diagnosis</button>
+  </form>
+{% endblock %}

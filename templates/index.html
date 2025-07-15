@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}HDSS-DITCD Home{% endblock %}
+
+{% block content %}
+  <div style="text-align: center;">
+    <p>
+    Please answer a few short questions about the physical symptoms you observe on your crop’s leaves, stems, and tubers.
+    The HDSS-DITCD will combine your answers with the preliminary visual image diagnosis to provide a  comprehensive diagnosis and controls.
+  </p>
+   <br>
+  <p>
+    👉 <strong>Tip:</strong> If you are unsure about any question, please inspect your crop carefully or consult a local extension officer.
+  </p>
+    <br>
+    <a href="{{ url_for('step1_cnn') }}" class="btn">Continue Diagnosis</a>
+  </div>
+
+  <footer style="text-align: center; margin-top: 40px;">
+    <img src="{{ url_for('static', filename='footer.jpg') }}" alt="Tuber Crops" style="max-width: 100%; height: auto; border-radius: 8px;">
+  </footer>
+{% endblock %}

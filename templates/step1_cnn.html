@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Step 1: Initial Scan{% endblock %}
+
+{% block content %}
+  <!-- <h2>Step 1a: Initial Scan Result</h2> -->
+  <h2>Step 1: Initial Scan Result</h2>
+  <p>Select the disease identified by the initial image scan (the CNN model).</p>
+  <form method="post">
+    <label for="cnn">Crop CNN Result:</label>
+    <select name="cnn" id="cnn" required>
+      <option value="Yam Anthracnose">Yam Anthracnose</option>
+      <option value="Yam Mosaic Virus">Yam Mosaic Virus</option>
+      <option value="Cassava Mosaic Virus">Cassava Mosaic Virus</option>
+      <option value="Cassava Bacterial Blight">Cassava Bacterial Blight</option>
+      <option value="Healthy">Healthy</option>
+    </select>
+    
+    <button type="submit">Next</button>
+  </form>
+{% endblock %}

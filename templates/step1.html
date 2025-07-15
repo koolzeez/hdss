@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Step 1b: Leaf Texture{% endblock %}
+
+{% block content %}
+  <h2>Step 1b: Leaf Texture</h2>
+  <p>Now, please describe the texture of the affected leaves.</p>
+  <form method="post">
+    <label for="leaf_texture">Leaf Texture:</label>
+    <select name="leaf_texture" id="leaf_texture" required>
+      <option value="normal_firm">Normal Firm</option>
+      <option value="normal_soft_puckered">Normal, but soft and puckered/mosaic pattern</option>
+      <option value="soft_mushy">Soft and Mushy (water-soaked spots)</option>
+      <option value="dry_brittle">Dry and Brittle (dead spots)</option>
+    </select>
+    
+    <div>
+      <img src="https://www.vegetable-ipm.org/wp-content/uploads/2021/08/anthracnose-on-yam-leaf-Clemson-University-USDA-Cooperative-Extension-Slide-Series-Bugwood.org_.jpg" alt="Leaf Symptom Example" class="symptom-image">
+      <p><small>Example of leaf symptoms (Anthracnose on Yam).</small></p>
+    </div>
+    
+    <button type="submit">Next</button>
+  </form>
+{% endblock %}
