@@ -1,9 +1,9 @@
-title: Hdss
-emoji: 👁
-colorFrom: yellow
-colorTo: yellow
+title: Tuber
+emoji:  👁
+colorFrom: pink
+colorTo: indigo
 sdk: gradio
-sdk_version: 5.36.2
+sdk_version: 5.37.0
 app_file: app.py
 pinned: false
-short_description: HDSS for Diagnosis of Indigenous tuber diseases
+short_description: Development of an Hybrid Decision Support System
