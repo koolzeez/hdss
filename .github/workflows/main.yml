@@ -12,9 +12,30 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-          lfs: true
+          fetch-depth: 0 # This is good, fetches full history
+          lfs: true # Essential for Hugging Face Spaces which often use Git LFS
+
+      # Configure Git for Hugging Face authentication
+      - name: Configure Git for Hugging Face
+        run: |
+          git config --global credential.helper store
+          # This creates a .git-credentials file that git can use
+          echo "https://koolzzeez:${{ secrets.HF_TOKEN }}@huggingface.co" > ~/.git-credentials
+          git config --global user.email "akinlolu.azeez@gmail.com" # IMPORTANT: Use an email associated with your GitHub account or a generic one for actions
+          git config --global user.name "GitHub Actions" # Optional, but good practice
+
+      # Add the Hugging Face Space as a remote
+      # This is crucial so `git pull` and `git push` can refer to it
+      - name: Add Hugging Face remote
+        run: git remote add huggingface https://huggingface.co/spaces/koolzzeez/tuber
+
+      # Pull changes from Hugging Face Space before pushing 👈 NEW STEP!
+      - name: Fetch and Merge from Hugging Face Space
+        # The `--rebase` option is generally preferred here to maintain a clean linear history.
+        # It takes your local commits and reapplies them on top of the remote's latest commits.
+        run: git pull huggingface main --rebase
+
+      # Push to Hugging Face Space
       - name: Push to hub
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://koolzzeez:$HF_TOKEN@huggingface.co/spaces/koolzzeez/tuber main
+        # Now that the remote has been added, you can use its name
+        run: git push huggingface main
