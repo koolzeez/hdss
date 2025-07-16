@@ -1,6 +1,10 @@
 Flask==3.1.1
 experta==1.9.4
-tensorflow==2.13.0
 pillow==9.5.0
 numpy==1.24.3
 gunicorn==21.2.0
+huggingface-hub==0.33.2
+tensorboard==2.19.0
+tensorboard-data-server==0.7.2
+tensorflow==2.19.0
+keras==3.10.0
